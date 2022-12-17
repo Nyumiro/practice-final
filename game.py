@@ -37,7 +37,7 @@ class Target:
             hit = choice(self.__points)
 
             if player.name not in self.__players_hits:
-                self.__players_hits[player.name] = hit
+                self.__players_hits[player.name] = hit if hit >= 5 else 0  # Не считаем попадания в белые зоны мишени!
             else:
                 self.__players_hits[player.name] += hit if hit >= 5 else 0  # Не считаем попадания в белые зоны мишени!
 
